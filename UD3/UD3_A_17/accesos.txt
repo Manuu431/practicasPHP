@@ -1,0 +1,10 @@
+Intento fallido de acceso del usuario manu.
+El usuario Juan ha accedido al sistema.
+Intento fallido de acceso del usuario Juan.
+Intento fallido de acceso del usuario Juan.
+Intento fallido de acceso del usuario asd.
+Intento fallido de acceso del usuario asd.
+El usuario Luisa ha accedido al sistema.
+El usuario Antonio ha accedido al sistema.
+Intento fallido de acceso del usuario manuel.
+El usuario Antonio ha accedido al sistema.

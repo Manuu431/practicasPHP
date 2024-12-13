@@ -1,0 +1,88 @@
+table {
+    width: 100%;
+    border: 1px solid black;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-family: Arial, sans-serif;
+}
+
+th, td{
+    padding: 0.5em;
+}
+
+td {
+    padding: 1em;
+    text-align: left;
+}
+
+th {
+    background-color: #003366; /* Azul oscuro para encabezados */
+    color: white;
+    font-weight: bold;
+    text-align: center;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: #ddd;
+}
+
+td {
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+}
+
+caption {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+button {
+    color: white; /* Texto blanco */
+    padding: 10px 20px; /* Espaciado interior */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    font-size: 16px; /* Tamaño de fuente */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    transition: background-color 0.3s ease; /* Transición suave al cambiar el color */
+}
+
+button:hover {
+    opacity: 0.8; /* Ligera opacidad al pasar el mouse */
+}
+
+button:focus {
+    outline: none; /* Eliminar el contorno al hacer clic */
+}
+
+button:active {
+    opacity: 0.7; /* Ligera opacidad cuando se hace clic */
+}
+
+.editar {
+    background-color: #FF8C00; /* Naranja más fuerte */
+}
+
+.borrar {
+    background-color: #D32F2F; /* Rojo más fuerte */
+}
+
+.nuevoCliente {
+    background-color: #4682B4; /* Azul más oscuro */
+}
+
+.editar:hover {
+    background-color: #e67e00; /* Naranja más oscuro al pasar el mouse */
+}
+
+.borrar:hover {
+    background-color: #c62828; /* Rojo más oscuro al pasar el mouse */
+}
+
+.nuevoCliente:hover {
+    background-color: #357a98; /* Azul más oscuro al pasar el mouse */
+}
