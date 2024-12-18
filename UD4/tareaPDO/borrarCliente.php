@@ -1,4 +1,5 @@
 <?php
+include "seguridad.php";
 include "funciones.php";
 
 $dni = $_REQUEST['dni'];

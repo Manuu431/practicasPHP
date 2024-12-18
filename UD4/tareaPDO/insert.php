@@ -1,7 +1,7 @@
 <?php
 function insertarDatos($dniVariable, $nombreVariable, $direccionVariable, $localidadVariable, $provinciaVariable, $telefonoVariable, $emailVariable) {
     try{
-        $con = new PDO('mysql:host=localhost;dbname=clientesDB', 'manu', 'manu');
+        $con = new PDO('mysql:host=localhost;dbname=clientesDB', 'manu', '03w5Qk$7v');
         $con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     
         $stmt = $con-> prepare(

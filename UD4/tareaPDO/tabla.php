@@ -1,3 +1,7 @@
+<?php
+include "seguridad.php";
+include "funciones.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,8 +12,6 @@
 </head>
 <body>
 <?php
-include "funciones.php";
-
 conexionDB();
 
 // insertarDatos("23232324F", "Pablo", "C/ Ejemplo", "Pego", "Alicante", "654654654", "pablo@gmail.com");
@@ -24,6 +26,7 @@ conexionDB();
         <th>Provincia</th>
         <th>Teléfono</th>
         <th>Email</th>
+        <th>Permisos</th>
         <th class='editar'>Editar</th>
         <th class='borrar'>Borrar</th>
     </tr>
@@ -53,8 +56,13 @@ if(isset($_REQUEST["mensaje"])){
         echo "El cliente ha sido eliminado correctamente.<br>"; 
     }
 }
-echo "<a href='clienteNuevo.php'><button class='nuevoCliente'>Nuevo cliente</button></a><br><br>";
-echo "<a href='index.php'><button class='nuevoCliente'>Cerrar sesión</button></a>";
 ?>
+<a href="clienteNuevo.php">
+    <button>Nuevo cliente</button>
+</a>
+
+<a href='cerrarSesion.php'>
+    <button class='borrar'>Cerrar sesión</button>
+</a>
 </body>
 </html>

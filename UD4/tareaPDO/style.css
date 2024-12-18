@@ -1,3 +1,47 @@
+/*LOGIN*/
+form {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+}
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+input {
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    color: #fff;
+    margin-bottom: 15px;
+}
+input:focus {
+    outline: none;
+    box-shadow: 0 0 5px #4c83ff;
+}
+input::placeholder {
+    color: #ddd;
+}
+button {
+    background: #4c83ff;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+button:hover {
+    background: #365bb8;
+}
+
+/*TABLA*/
 table {
     width: 100%;
     border: 1px solid black;
@@ -42,7 +86,7 @@ caption {
 }
 
 button {
-    color: white; /* Texto blanco */
+    background-color: #4682B4; /* Azul más oscuro */
     padding: 10px 20px; /* Espaciado interior */
     border: none; /* Sin borde */
     border-radius: 5px; /* Bordes redondeados */
@@ -53,6 +97,7 @@ button {
 
 button:hover {
     opacity: 0.8; /* Ligera opacidad al pasar el mouse */
+    background-color: #357a98; /* Azul más oscuro al pasar el mouse */
 }
 
 button:focus {
@@ -71,18 +116,10 @@ button:active {
     background-color: #D32F2F; /* Rojo más fuerte */
 }
 
-.nuevoCliente {
-    background-color: #4682B4; /* Azul más oscuro */
-}
-
 .editar:hover {
     background-color: #e67e00; /* Naranja más oscuro al pasar el mouse */
 }
 
 .borrar:hover {
     background-color: #c62828; /* Rojo más oscuro al pasar el mouse */
-}
-
-.nuevoCliente:hover {
-    background-color: #357a98; /* Azul más oscuro al pasar el mouse */
 }

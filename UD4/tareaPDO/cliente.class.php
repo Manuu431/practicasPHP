@@ -7,6 +7,7 @@ class Cliente {
     private $provincia;
     private $telefono;
     private $email;
+    private $permisos;
 
     // public function __construct(){}
 
@@ -17,6 +18,7 @@ class Cliente {
     public function getProvincia()              {return $this->provincia;}
     public function getTelefono()               {return $this->telefono;}
     public function getEmail()                  {return $this->email;}
+    public function getPermisos()                {return $this->permisos;}
 
     public function setDni($dni)                {$this->dni=$dni;}
     public function setNombre($nombre)          {$this->nombre = $nombre;}
@@ -25,6 +27,22 @@ class Cliente {
     public function setProvincia($provincia)    {$this->provincia=$provincia;}
     public function setTelefono($telefono)      {$this->telefono=$telefono;}
     public function setEmail($email)            {$this->email=$email;}
+    public function setPermisos($permisos)       {$this->permisos=$permisos;}
+
+    public function returnPermisos($perm){
+        if($perm === 1){
+            echo "Cliente";
+        }
+        else if($perm === 2){
+            echo "Empleado";
+        }
+        else if($perm === 3){
+            echo "Administrador";
+        }
+        else{
+            echo "No tiene permisos";
+        }
+    }
 
     public function __toString(){
         $info = "<tr>";
@@ -35,6 +53,9 @@ class Cliente {
         $info .= "<td>{$this->provincia}</td>";
         $info .= "<td>{$this->telefono}</td>";
         $info .= "<td>{$this->email}</td>";
+        // $info .= "<td>{returnPermisos($this->permisos)}</td>";
+        // $info .= "<td>" . returnPermisos($this->permisos) . "</td>";
+        $info .= "<td>$this->returnPermisos($this->permisos)</td>";
         $info .= "<td><a href='editarCliente.php?dni={$this->dni}'><button class='editar'>Editar</button></a></td>";
         $info .= "<td><a href='borrarCliente.php?dni={$this->dni}'><button class='borrar'>Borrar</button></a></td>";
         $info .= "</tr>";

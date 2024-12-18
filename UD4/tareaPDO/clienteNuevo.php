@@ -1,4 +1,5 @@
-<?php 
+<?php
+include "seguridad.php";
 include "insert.php";
 
 function validar(){
@@ -36,7 +37,7 @@ function validar(){
 
         <?php 
         echo "<button type='submit'>Añadir cliente</button><br>";
-        echo "<a href='index.php'>Volver</a><br>";
+        echo "<a href='tabla.php'>Volver</a><br>";
         
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             if (isset($_POST['dni']) && isset($_POST['nombre']) && isset($_POST['direccion']) 

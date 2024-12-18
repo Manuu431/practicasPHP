@@ -3,7 +3,7 @@ include "insert.php";
 include "cliente.class.php";
 function conexionDB() {
     try{
-        $con = new PDO('mysql:host=localhost;dbname=clientesDB', 'manu', 'manu');
+        $con = new PDO('mysql:host=localhost;dbname=clientesDB', 'manu', '03w5Qk$7v');
         // $con = new PDO('mysql:host=192.168.122.1;dbname=clientes_db', 'jefe', 'jefe');
         $con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         // echo "La conexión ha sido un éxito.<br>";
@@ -21,7 +21,7 @@ function cerrarConexionDB($con) {
 
 function retClientes(){
     try{
-        $pdo = new PDO('mysql:host=localhost;dbname=clientesDB', 'manu', 'manu');
+        $pdo = new PDO('mysql:host=localhost;dbname=clientesDB', 'manu', '03w5Qk$7v');
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     
         $stmt = $pdo->prepare('SELECT * FROM clientes');
@@ -59,7 +59,7 @@ function encontrarCliente($dni){
 
 function modificarCliente($dniVariable, $nombreVariable, $direccionVariable, $localidadVariable, $provinciaVariable, $telefonoVariable, $emailVariable) {
     try{
-        $con = new PDO('mysql:host=localhost;dbname=clientesDB', 'manu', 'manu');
+        $con = new PDO('mysql:host=localhost;dbname=clientesDB', 'manu', '03w5Qk$7v');
         $con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     
         $stmt = $con-> prepare(
@@ -85,7 +85,7 @@ function modificarCliente($dniVariable, $nombreVariable, $direccionVariable, $lo
 
 function eliminarCliente($dniVariable) {
     try{
-        $con = new PDO('mysql:host=localhost;dbname=clientesDB', 'manu', 'manu');
+        $con = new PDO('mysql:host=localhost;dbname=clientesDB', 'manu', '03w5Qk$7v');
         $con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     
         $stmt = $con-> prepare(

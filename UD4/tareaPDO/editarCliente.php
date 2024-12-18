@@ -1,4 +1,5 @@
-<?php 
+<?php
+include "seguridad.php";
 include "funciones.php";
 
 function validar(){
