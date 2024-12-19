@@ -30,17 +30,17 @@ class Cliente {
     public function setPermisos($permisos)       {$this->permisos=$permisos;}
 
     public function returnPermisos($perm){
-        if($perm === 1){
-            echo "Cliente";
+        if($perm == 1){
+            return "Cliente";
         }
-        else if($perm === 2){
-            echo "Empleado";
+        else if($perm == 2){
+            return "Empleado";
         }
-        else if($perm === 3){
-            echo "Administrador";
+        else if($perm == 3){
+            return "Administrador";
         }
         else{
-            echo "No tiene permisos";
+            return "No tiene permisos";
         }
     }
 
@@ -53,9 +53,7 @@ class Cliente {
         $info .= "<td>{$this->provincia}</td>";
         $info .= "<td>{$this->telefono}</td>";
         $info .= "<td>{$this->email}</td>";
-        // $info .= "<td>{returnPermisos($this->permisos)}</td>";
-        // $info .= "<td>" . returnPermisos($this->permisos) . "</td>";
-        $info .= "<td>$this->returnPermisos($this->permisos)</td>";
+        $info .= "<td>{$this->returnPermisos($this->permisos)}</td>";
         $info .= "<td><a href='editarCliente.php?dni={$this->dni}'><button class='editar'>Editar</button></a></td>";
         $info .= "<td><a href='borrarCliente.php?dni={$this->dni}'><button class='borrar'>Borrar</button></a></td>";
         $info .= "</tr>";
