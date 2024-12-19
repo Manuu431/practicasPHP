@@ -43,8 +43,22 @@ function retClientes(){
 
 function crearTabla(){
     $usuarios = retClientes();
-    foreach($usuarios as $usuario){
-        echo $usuario;
+    echo $_SESSION['mostrar'];
+    if($_SESSION['mostrar'] == "si"){
+        foreach($usuarios as $usuario){
+            $usuarioBorrado = $usuario->getBorrado();
+            if(!$usuarioBorrado){
+                echo $usuario;
+            } 
+        }
+    }
+    elseif($_SESSION['mostrar'] == "no"){
+        foreach($usuarios as $usuario){
+            $usuarioBorrado = $usuario->getBorrado();
+            if($usuarioBorrado){
+                echo $usuario;
+            } 
+        }
     }
 }
 
@@ -88,8 +102,8 @@ function eliminarCliente($dniVariable) {
         $con = new PDO('mysql:host=localhost;dbname=clientesDB', 'manu', '03w5Qk$7v');
         $con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     
-        $stmt = $con-> prepare(
-            'DELETE FROM clientes WHERE dni = :dni'
+        $stmt = $con->prepare(
+            'UPDATE clientes SET borrado = 1 WHERE dni = :dni'
         );
     
         $rows = $stmt->execute(array(':dni' => $dniVariable));

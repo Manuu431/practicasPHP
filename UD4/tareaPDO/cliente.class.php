@@ -18,7 +18,8 @@ class Cliente {
     public function getProvincia()              {return $this->provincia;}
     public function getTelefono()               {return $this->telefono;}
     public function getEmail()                  {return $this->email;}
-    public function getPermisos()                {return $this->permisos;}
+    public function getPermisos()               {return $this->permisos;}
+    public function getBorrado()                {return $this->borrado;}
 
     public function setDni($dni)                {$this->dni=$dni;}
     public function setNombre($nombre)          {$this->nombre = $nombre;}
@@ -28,6 +29,7 @@ class Cliente {
     public function setTelefono($telefono)      {$this->telefono=$telefono;}
     public function setEmail($email)            {$this->email=$email;}
     public function setPermisos($permisos)       {$this->permisos=$permisos;}
+    public function setBorrado($borrado)         {$this->borrado=$borrado;}
 
     public function returnPermisos($perm){
         if($perm == 1){
@@ -44,20 +46,32 @@ class Cliente {
         }
     }
 
+    public function returnBorrado($borr){
+        if($borr == 1){
+            return "Cliente eliminado";
+        }
+        else if($borr == 0){
+            return "Cliente disponible";
+        }
+    }
+
     public function __toString(){
-        $info = "<tr>";
-        $info .= "<td>{$this->dni}</td>";
-        $info .= "<td>{$this->nombre}</td>";
-        $info .= "<td>{$this->direccion}</td>";
-        $info .= "<td>{$this->localidad}</td>";
-        $info .= "<td>{$this->provincia}</td>";
-        $info .= "<td>{$this->telefono}</td>";
-        $info .= "<td>{$this->email}</td>";
-        $info .= "<td>{$this->returnPermisos($this->permisos)}</td>";
-        $info .= "<td><a href='editarCliente.php?dni={$this->dni}'><button class='editar'>Editar</button></a></td>";
-        $info .= "<td><a href='borrarCliente.php?dni={$this->dni}'><button class='borrar'>Borrar</button></a></td>";
-        $info .= "</tr>";
-        return $info;
+        // if($this->borrado == 0){
+            $info = "<tr>";
+            $info .= "<td>{$this->dni}</td>";
+            $info .= "<td>{$this->nombre}</td>";
+            $info .= "<td>{$this->direccion}</td>";
+            $info .= "<td>{$this->localidad}</td>";
+            $info .= "<td>{$this->provincia}</td>";
+            $info .= "<td>{$this->telefono}</td>";
+            $info .= "<td>{$this->email}</td>";
+            $info .= "<td>{$this->returnPermisos($this->permisos)}</td>";
+            $info .= "<td>{$this->returnBorrado($this->borrado)}</td>";
+            $info .= "<td><a href='editarCliente.php?dni={$this->dni}'><button class='editar'>Editar</button></a></td>";
+            $info .= "<td><a href='borrarCliente.php?dni={$this->dni}'><button class='borrar'>Borrar</button></a></td>";
+            $info .= "</tr>";
+            return $info;
+        // }
     }
 }
 
