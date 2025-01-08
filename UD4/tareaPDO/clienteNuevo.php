@@ -34,6 +34,16 @@ function validar(){
         <input type="text" id="telefono" name="telefono"><br>
         <label for="email">Email:</label>
         <input type="text" id="email" name="email"><br>
+        <label for="email">Permisos:</label>
+        <select name="permisos" id="permisos">
+            <option value="" selected disabled>Selecciona un tipo de permiso</option>
+            <option value="1">Usuario</option>
+            <option value="2">Empleado</option>
+            <option value="3">Administrador</option>
+        </select>
+        <br>
+        <label for="password">Contraseña:</label>
+        <input type="password" id="password" name="password"><br>
 
         <?php 
         echo "<button type='submit'>Añadir cliente</button><br>";
@@ -41,13 +51,14 @@ function validar(){
         
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             if (isset($_POST['dni']) && isset($_POST['nombre']) && isset($_POST['direccion']) 
-            && isset($_POST['localidad']) && isset($_POST['provincia']) && isset($_POST['telefono']) && isset($_POST['email'])){
+            && isset($_POST['localidad']) && isset($_POST['provincia']) && isset($_POST['telefono'])
+            && isset($_POST['email']) && isset($_POST['permisos']) && isset($_POST['password'])) {
                 if(!validar()){
                     echo "Todos los campos deben estar llenos";
                 }
                 else{
-                    if(insertarDatos($_POST['dni'], $_POST['nombre'], $_POST['direccion'], $_POST['localidad'], $_POST['provincia'], $_POST['telefono'], $_POST['email'])                    ){
-                        header("Location:index.php?mensaje=insertok&&nombre={$_POST['nombre']}");
+                    if(insertarDatos($_POST['dni'], $_POST['nombre'], $_POST['direccion'], $_POST['localidad'], $_POST['provincia'], $_POST['telefono'], $_POST['email'], $_POST['permisos'], $_POST['password'])){
+                        header("Location:tabla.php?mensaje=insertok&&nombre={$_POST['nombre']}");
                     }
                     else{
                         echo "No se ha podido conectar con la base de datos, inténtelo más tarde";

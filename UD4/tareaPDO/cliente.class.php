@@ -56,7 +56,20 @@ class Cliente {
     }
 
     public function __toString(){
-        // if($this->borrado == 0){
+        if($this->borrado == 1){
+            $info = "<tr>";
+            $info .= "<td>{$this->dni}</td>";
+            $info .= "<td>{$this->nombre}</td>";
+            $info .= "<td>{$this->direccion}</td>";
+            $info .= "<td>{$this->localidad}</td>";
+            $info .= "<td>{$this->provincia}</td>";
+            $info .= "<td>{$this->telefono}</td>";
+            $info .= "<td>{$this->email}</td>";
+            $info .= "<td>{$this->returnPermisos($this->permisos)}</td>";
+            $info .= "<td>{$this->returnBorrado($this->borrado)}</td>";
+            $info .= "</tr>";
+        }
+        elseif($this->borrado == 0){
             $info = "<tr>";
             $info .= "<td>{$this->dni}</td>";
             $info .= "<td>{$this->nombre}</td>";
@@ -70,8 +83,8 @@ class Cliente {
             $info .= "<td><a href='editarCliente.php?dni={$this->dni}'><button class='editar'>Editar</button></a></td>";
             $info .= "<td><a href='borrarCliente.php?dni={$this->dni}'><button class='borrar'>Borrar</button></a></td>";
             $info .= "</tr>";
-            return $info;
-        // }
+        }
+        return $info;
     }
 }
 

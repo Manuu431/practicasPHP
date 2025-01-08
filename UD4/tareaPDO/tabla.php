@@ -33,8 +33,13 @@ if (!isset($_SESSION['mostrar'])) {
             <th>Email</th>
             <th>Permisos</th>
             <th>Borrado</th>
-            <th class='editar'>Editar</th>
-            <th class='borrar'>Borrar</th>
+            <?php
+            if($_SESSION['mostrar'] == "si"){
+                echo "
+                <th class='editar'>Editar</th>
+                <th class='borrar'>Borrar</th>";
+            }
+            ?>
         </tr>
     <?php crearTabla();?>
     </table>
